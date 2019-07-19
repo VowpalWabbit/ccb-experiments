@@ -18,10 +18,12 @@
 
 void print_usage(char* exe_name)
 {
-  std::cerr << "Usage: " << exe_name << " [1|2|3]\n"
+  std::cerr << "Usage: " << exe_name << " [1|2|3|4]\n"
             << "\t 1 - diversity\n"
             << "\t 2 - slot dependent ctr\n"
-            << "\t 3 - discovery\n";
+            << "\t 3 - discovery\n"
+            << "\t 4 - progressive ctr coin\n"
+            << "\t 5 - progressive ctr normal\n";
 }
 
 int main(int argc, char* argv[])
@@ -44,6 +46,14 @@ int main(int argc, char* argv[])
   else if (arg_str == "3")
   {
     discovery_rate();
+  }
+  else if (arg_str == "4")
+  {
+    progressive_ctr(true);
+  }
+  else if (arg_str == "5")
+  {
+    progressive_ctr(false);
   }
   else
   {
